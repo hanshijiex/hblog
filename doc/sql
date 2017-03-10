@@ -1,0 +1,11 @@
+create database blog;
+
+create table if not exists t_article (
+    id bigint unsigned auto_increment not null comment '自增id',
+    title varchar(200) not null default '0' comment '标题',
+    content varchar(10240) not null default '0' comment '内容',
+    ctime int not null default 0 comment '插入时间',
+    utime int not null default 0 comment '更新时间',
+    primary key (`id`),
+    key `ctime` (`ctime`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章表' ;
